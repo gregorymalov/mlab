@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Фон с градиентом -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EFF6FF" />
+      <stop offset="100%" stop-color="#DBEAFE" />
+    </linearGradient>
+    <linearGradient id="blue-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feFlood flood-color="#3B82F6" flood-opacity="0.7" result="color" />
+      <feComposite in="color" in2="blur" operator="in" result="shadow" />
+      <feComposite in="SourceGraphic" in2="shadow" operator="over" />
+    </filter>
+    
+    <!-- Определение путей для анимированных частиц -->
+    <path id="path1" d="M0,0 L-120,-80" />
+    <path id="path2" d="M0,0 L-120,0" />
+    <path id="path3" d="M0,0 L-120,80" />
+    <path id="path4" d="M0,0 L120,-80" />
+    <path id="path5" d="M0,0 L120,0" />
+    <path id="path6" d="M0,0 L120,80" />
+    <path id="path7" d="M0,0 L0,-120" />
+    <path id="path8" d="M0,0 L0,120" />
+  </defs>
+
+  <!-- Основной фон -->
+  <rect width="800" height="600" fill="url(#bg-gradient)" />
+
+  <!-- Декоративные элементы -->
+  <circle cx="650" cy="150" r="100" fill="#DBEAFE" opacity="0.7" />
+  <circle cx="150" cy="450" r="120" fill="#DBEAFE" opacity="0.7" />
+  
+  <!-- Центральная часть - нейронная сеть -->
+  <g transform="translate(400, 300)" filter="url(#glow)">
+    <!-- Центральный круг -->
+    <circle cx="0" cy="0" r="50" fill="url(#blue-gradient)" />
+    
+    <!-- Надпись AI в центре -->
+    <text x="0" y="15" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="white" text-anchor="middle">AI</text>
+    
+    <!-- Узлы первого уровня -->
+    <circle cx="-120" cy="-80" r="20" fill="url(#blue-gradient)" />
+    <circle cx="-120" cy="0" r="20" fill="url(#blue-gradient)" />
+    <circle cx="-120" cy="80" r="20" fill="url(#blue-gradient)" />
+    
+    <!-- Узлы второго уровня -->
+    <circle cx="120" cy="-80" r="20" fill="url(#blue-gradient)" />
+    <circle cx="120" cy="0" r="20" fill="url(#blue-gradient)" />
+    <circle cx="120" cy="80" r="20" fill="url(#blue-gradient)" />
+    
+    <!-- Узлы верхний и нижний -->
+    <circle cx="0" cy="-120" r="20" fill="url(#blue-gradient)" />
+    <circle cx="0" cy="120" r="20" fill="url(#blue-gradient)" />
+    
+    <!-- Соединения -->
+    <line x1="-120" y1="-80" x2="0" y2="0" stroke="#2563EB" stroke-width="3" opacity="0.7" />
+    <line x1="-120" y1="0" x2="0" y2="0" stroke="#2563EB" stroke-width="3" opacity="0.7" />
+    <line x1="-120" y1="80" x2="0" y2="0" stroke="#2563EB" stroke-width="3" opacity="0.7" />
+    
+    <line x1="0" y1="0" x2="120" y2="-80" stroke="#2563EB" stroke-width="3" opacity="0.7" />
+    <line x1="0" y1="0" x2="120" y2="0" stroke="#2563EB" stroke-width="3" opacity="0.7" />
+    <line x1="0" y1="0" x2="120" y2="80" stroke="#2563EB" stroke-width="3" opacity="0.7" />
+    
+    <line x1="0" y1="0" x2="0" y2="-120" stroke="#2563EB" stroke-width="3" opacity="0.7" />
+    <line x1="0" y1="0" x2="0" y2="120" stroke="#2563EB" stroke-width="3" opacity="0.7" />
+    
+    <!-- Движущиеся частицы -->
+    <circle cx="0" cy="0" r="6" fill="white">
+      <animateMotion path="M0,0 L-120,-80 M-120,-80 L0,0" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="0" cy="0" r="6" fill="white">
+      <animateMotion path="M0,0 L-120,0 M-120,0 L0,0" dur="4s" begin="0.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="0" cy="0" r="6" fill="white">
+      <animateMotion path="M0,0 L-120,80 M-120,80 L0,0" dur="3.5s" begin="1s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="0" cy="0" r="6" fill="white">
+      <animateMotion path="M0,0 L120,-80 M120,-80 L0,0" dur="3s" begin="1.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="0" cy="0" r="6" fill="white">
+      <animateMotion path="M0,0 L120,0 M120,0 L0,0" dur="4s" begin="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="0" cy="0" r="6" fill="white">
+      <animateMotion path="M0,0 L120,80 M120,80 L0,0" dur="3.5s" begin="2.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="0" cy="0" r="6" fill="white">
+      <animateMotion path="M0,0 L0,-120 M0,-120 L0,0" dur="3s" begin="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="0" cy="0" r="6" fill="white">
+      <animateMotion path="M0,0 L0,120 M0,120 L0,0" dur="4s" begin="3.5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- CRM элемент -->
+  <g transform="translate(180, 180)">
+    <rect x="-50" y="-40" width="100" height="80" rx="10" fill="#EFF6FF" stroke="#2563EB" stroke-width="2" />
+    <text x="0" y="-15" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2563EB" text-anchor="middle">CRM</text>
+    <line x1="-30" y1="5" x2="30" y2="5" stroke="#2563EB" stroke-width="2" />
+    <line x1="-30" y1="15" x2="20" y2="15" stroke="#2563EB" stroke-width="2" />
+    <line x1="-30" y1="25" x2="25" y2="25" stroke="#2563EB" stroke-width="2" />
+    <path d="M180,180 C220,220 280,250 320,280" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="5,3" fill="none" />
+  </g>
+  
+  <!-- График аналитики -->
+  <g transform="translate(620, 180)">
+    <rect x="-50" y="-40" width="100" height="80" rx="10" fill="#EFF6FF" stroke="#2563EB" stroke-width="2" />
+    <text x="0" y="-15" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2563EB" text-anchor="middle">ANALYTICS</text>
+    <polyline points="-40,20 -25,5 -10,15 5,0 20,10 35,-5" fill="none" stroke="#2563EB" stroke-width="2" />
+    <line x1="-40" y1="30" x2="40" y2="30" stroke="#2563EB" stroke-width="1" />
+    <path d="M620,180 C580,220 520,250 480,280" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="5,3" fill="none" />
+  </g>
+  
+  <!-- Дашборд с графиками -->
+  <g transform="translate(620, 420)">
+    <rect x="-60" y="-40" width="120" height="80" rx="10" fill="#EFF6FF" stroke="#2563EB" stroke-width="2" />
+    <text x="0" y="-25" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2563EB" text-anchor="middle">DASHBOARD</text>
+    <rect x="-50" y="-15" width="40" height="25" rx="2" fill="#DBEAFE" stroke="#2563EB" stroke-width="1" />
+    <rect x="0" y="-15" width="40" height="25" rx="2" fill="#DBEAFE" stroke="#2563EB" stroke-width="1" />
+    <rect x="-50" y="15" width="90" height="20" rx="2" fill="#DBEAFE" stroke="#2563EB" stroke-width="1" />
+    <path d="M620,420 C580,380 520,350 480,320" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="5,3" fill="none" />
+  </g>
+  
+  <!-- Элемент данных -->
+  <g transform="translate(180, 420)">
+    <rect x="-50" y="-40" width="100" height="80" rx="10" fill="#EFF6FF" stroke="#2563EB" stroke-width="2" />
+    <text x="0" y="-15" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2563EB" text-anchor="middle">DATA</text>
+    <text x="0" y="10" font-family="monospace" font-size="12" fill="#2563EB" text-anchor="middle">01010101</text>
+    <text x="0" y="25" font-family="monospace" font-size="12" fill="#2563EB" text-anchor="middle">10101010</text>
+    <path d="M180,420 C220,380 280,350 320,320" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="5,3" fill="none" />
+  </g>
+  
+  <!-- Фигуры, представляющие данные и аналитику -->
+  <g transform="translate(600, 400)">
+    <rect x="-20" y="-30" width="40" height="60" rx="5" fill="#3B82F6" opacity="0.6" />
+    <rect x="-60" y="-20" width="40" height="50" rx="5" fill="#3B82F6" opacity="0.4" />
+    <rect x="20" y="-40" width="40" height="70" rx="5" fill="#3B82F6" opacity="0.5" />
+  </g>
+  
+  <!-- Бинарный код на заднем фоне -->
+  <g fill="#2563EB" opacity="0.1" font-family="monospace" font-size="14">
+    <text x="50" y="50">01001001 01001001</text>
+    <text x="50" y="70">10100101 00110011</text>
+    <text x="50" y="90">11001100 10101010</text>
+    <text x="50" y="110">01010101 11001100</text>
+    <text x="600" y="480">10101010 10101010</text>
+    <text x="600" y="500">01010101 01010101</text>
+    <text x="600" y="520">11110000 11110000</text>
+    <text x="600" y="540">00001111 00001111</text>
+  </g>
+  
+  <!-- Круги на фоне -->
+  <circle cx="100" cy="100" r="10" fill="#2563EB" opacity="0.3" />
+  <circle cx="150" cy="150" r="5" fill="#2563EB" opacity="0.3" />
+  <circle cx="700" cy="200" r="8" fill="#2563EB" opacity="0.3" />
+  <circle cx="650" cy="250" r="6" fill="#2563EB" opacity="0.3" />
+  <circle cx="200" cy="500" r="7" fill="#2563EB" opacity="0.3" />
+  <circle cx="250" cy="450" r="9" fill="#2563EB" opacity="0.3" />
+  
+  <!-- Соединяющие линии на фоне -->
+  <path d="M100,100 L150,150 L200,120 L250,170" stroke="#2563EB" stroke-width="1" opacity="0.2" fill="none" />
+  <path d="M650,250 L700,200 L600,150 L650,100" stroke="#2563EB" stroke-width="1" opacity="0.2" fill="none" />
+  <path d="M200,500 L250,450 L300,480 L350,420" stroke="#2563EB" stroke-width="1" opacity="0.2" fill="none" />
+</svg>
